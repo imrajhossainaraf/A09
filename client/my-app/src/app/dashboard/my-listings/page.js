@@ -43,7 +43,7 @@ export default function MyListings() {
 
   const fetchPets = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/owner/pets");
+      const res = await axios.get("https://furever-iusk.onrender.com/api/owner/pets");
       setPets(res.data);
     } catch (err) {
       toast.error("Failed to fetch listings");
@@ -85,7 +85,7 @@ export default function MyListings() {
     e.preventDefault();
     setUpdating(true);
     try {
-      await axios.put(`http://localhost:5000/api/pets/${selectedPet._id}`, editFormData);
+      await axios.put(`https://furever-iusk.onrender.com/api/pets/${selectedPet._id}`, editFormData);
       toast.success("Pet updated successfully!");
       setEditModalOpen(false);
       fetchPets();
@@ -99,7 +99,7 @@ export default function MyListings() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this pet?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/pets/${id}`);
+      await axios.delete(`https://furever-iusk.onrender.com/api/pets/${id}`);
       toast.success("Pet deleted successfully");
       fetchPets();
     } catch (err) {
@@ -109,7 +109,7 @@ export default function MyListings() {
 
   const handleOpenRequests = async (petId) => {
     try {
-      const res = await axios.get("http://localhost:5000/api/requests/owner");
+      const res = await axios.get("https://furever-iusk.onrender.com/api/requests/owner");
       const petRequests = res.data.filter((req) => req.petId === petId);
       setSelectedPetRequests(petRequests);
       setRequestsModalOpen(true);
@@ -120,7 +120,7 @@ export default function MyListings() {
 
   const handleUpdateStatus = async (requestId, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/requests/${requestId}/status`, { status });
+      await axios.put(`https://furever-iusk.onrender.com/api/requests/${requestId}/status`, { status });
       toast.success(`Request ${status} successfully`);
       setRequestsModalOpen(false);
       fetchPets();

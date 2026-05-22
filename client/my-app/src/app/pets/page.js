@@ -24,7 +24,7 @@ export default function AllPets() {
   const fetchPets = useCallback(async () => {
     setLoading(true);
     try {
-      let url = "http://localhost:5000/api/pets?";
+      let url = "https://furever-iusk.onrender.com/api/pets?";
       if (search) url += `search=${encodeURIComponent(search)}&`;
       if (species) url += `species=${encodeURIComponent(species)}`;
 

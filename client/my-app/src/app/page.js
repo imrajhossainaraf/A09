@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/pets");
+        const res = await axios.get("https://furever-iusk.onrender.com/api/pets");
         setFeaturedPets(res.data.slice(0, 6));
       } catch (err) {
         console.error("Failed to fetch pets", err);

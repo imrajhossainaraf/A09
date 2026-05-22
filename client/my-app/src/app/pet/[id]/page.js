@@ -26,7 +26,7 @@ export default function PetDetails() {
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/pets/${id}`);
+        const res = await axios.get(`https://furever-iusk.onrender.com/api/pets/${id}`);
         setPet(res.data);
       } catch (err) {
         toast.error("Failed to fetch pet details");
@@ -48,7 +48,7 @@ export default function PetDetails() {
     }
     setSubmitting(true);
     try {
-      await axios.post("http://localhost:5000/api/requests", {
+      await axios.post("https://furever-iusk.onrender.com/api/requests", {
         petId: pet._id,
         petName: pet.petName,
         ownerEmail: pet.ownerEmail,

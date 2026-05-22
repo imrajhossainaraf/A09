@@ -17,7 +17,7 @@ export default function MyRequests() {
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/requests/user");
+      const res = await axios.get("https://furever-iusk.onrender.com/api/requests/user");
       setRequests(res.data);
     } catch (err) {
       toast.error("Failed to fetch requests");
@@ -33,7 +33,7 @@ export default function MyRequests() {
   const handleCancel = async (id) => {
     if (!window.confirm("Are you sure you want to cancel this request?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/requests/${id}`);
+      await axios.delete(`https://furever-iusk.onrender.com/api/requests/${id}`);
       toast.success("Request cancelled");
       fetchRequests();
     } catch (err) {

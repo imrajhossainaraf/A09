@@ -42,7 +42,7 @@ export default function AddPet() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/pets", formData);
+      await axios.post("https://furever-iusk.onrender.com/api/pets", formData);
       toast.success("Pet added successfully!");
       router.push("/dashboard/my-listings");
     } catch (err) {

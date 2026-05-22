@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   const checkAuth = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/check");
+      const res = await axios.get("https://furever-iusk.onrender.com/api/auth/check");
       if (res.data.authenticated) {
         setUser(res.data.user);
       } else {
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const res = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+    const res = await axios.post("https://furever-iusk.onrender.com/api/auth/login", { email, password });
     if (res.data.confirmation) {
       setUser(res.data.user);
       return res.data;
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, photoURL, password) => {
-    const res = await axios.post("http://localhost:5000/api/auth/register", {
+    const res = await axios.post("https://furever-iusk.onrender.com/api/auth/register", {
       name,
       email,
       photoURL,
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await axios.post("http://localhost:5000/api/auth/logout");
+    await axios.post("https://furever-iusk.onrender.com/api/auth/logout");
     setUser(null);
   };
 

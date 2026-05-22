@@ -30,7 +30,7 @@ export function Register() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/register",
+        "https://furever-iusk.onrender.com/register",
         {
           email: data.email,
           password: data.password,
