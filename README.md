@@ -6,8 +6,8 @@ A full-stack rescue portal designed to match verified adoptable pets with loving
 
 ## 🌐 Live URL
 
-> **Client:** [https://fur-ever-friends.vercel.app](https://fur-ever-friends.vercel.app)  
-> **Server:** [https://fur-ever-friends-api.onrender.com](https://fur-ever-friends-api.onrender.com)
+> **Client:** https://a09-mocha.vercel.app/
+> **Server:** https://furever-iusk.onrender.com/
 
 ---
 
